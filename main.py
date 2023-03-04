@@ -75,7 +75,7 @@ class Comment(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey("blog_posts.id"))
 
 
-db.create_all()
+# db.create_all()
 
 
 def admin_only(f):
@@ -170,7 +170,6 @@ def show_post(post_id):
 
 
 @app.route("/about")
-@login_required
 def about():
     return render_template("about.html")
 
