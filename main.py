@@ -43,8 +43,6 @@ class User(UserMixin, db.Model):
     password = db.Column(db.String(100))
     name = db.Column(db.String(100))
 
-    # This will act like a List of BlogPost objects attached to each User.
-    # The "author" refers to the author property in the BlogPost class.
     posts = relationship("BlogPost", back_populates="author")
     comments = relationship("Comment", back_populates="author")
 
